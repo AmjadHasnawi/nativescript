@@ -1,0 +1,28 @@
+<ActionBar title="Store's Details"></ActionBar>
+
+<ScrollView orientation="vertical">
+    <StackLayout>
+        <StackLayout id="detail" class="h3">
+            <Image [src]="store.image" height="250" marginTop="5"></Image>
+                <StackLayout id="detail2" horizontalAlignment="center" orientation="horizontal">
+                    <Label  fontWeight="bold" text="Name: "></Label>
+                    <Label  text="{{store.name}} "></Label>
+                </StackLayout>
+            <StackLayout id="detail2" horizontalAlignment="center" orientation="horizontal">
+                <Label fontWeight="bold" text="Status: "></Label>
+                <Label [text]="store.status ? 'Open' : 'Closed'" [class]="store.status ? 'open' : 'closed'"></Label>
+            </StackLayout>
+            <StackLayout id="detail2" horizontalAlignment="center" orientation="horizontal">
+                <Label fontWeight="bold" text="Email: "></Label>
+                <Label text="{{store.email}}"></Label>
+            </StackLayout>
+            <StackLayout id="detail2" horizontalAlignment="center" orientation="horizontal">
+                <Label fontWeight="bold" text="Description: "></Label>
+                <Label  text="{{store.description}}"></Label>
+            </StackLayout>
+        </StackLayout>
+        <Label text="Related Stores: " class="h2 pleft"></Label>
+        <ns-store [relatedStores]="store.related"></ns-store>
+    </StackLayout>
+</ScrollView>
+

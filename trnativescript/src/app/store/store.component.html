@@ -1,0 +1,12 @@
+<ListView [items]="stores">
+    <ng-template let-item="item" class="p-10">
+        <GridLayout columns="auto, *" class="p-b-20 m-5 blueGrid" [nsRouterLink]="['/stores', item.id]">
+        <image column="0" [src]="item.image" width="70" borderRadius="70"></image>
+            <FlexboxLayout column="1">
+                <Label [text]="item.name" class="h3"></Label>
+                <Label *ngIf="item.status" text="Open" class="open"></Label>
+                <Label *ngIf="!item.status" text="Closed" class="closed"></Label>
+            </FlexboxLayout>
+        </GridLayout>
+    </ng-template>
+</ListView>
